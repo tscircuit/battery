@@ -1,10 +1,11 @@
 // import type { StandardFootprint } from "@tscircuit/react-fiber"
 import type { ReactElement } from "react"
 import { PinRow } from "@tscircuit/footprints"
+import type { CommonLayout, Dimension } from "@tscircuit/react-fiber"
 
-interface Props {
+interface Props extends CommonLayout {
   name: string
-  footprint?: ReactElement | string
+  voltage: Dimension
 }
 
 // A battery symbol is alternating long and short lines
@@ -79,10 +80,11 @@ const BATTERY_SYMBOL_LINES: Array<{
   },
 ]
 
-export const Battery = ({ name, footprint }: Props) => (
+export const Battery = ({ name, footprint, voltage, ...props }: Props) => (
   <component
     name={name}
     footprint={footprint ?? <PinRow pad_count={2} pad_pitch="0.2in" />}
+    {...props}
   >
     {BATTERY_SYMBOL_LINES.map((line, i) => (
       <schematicline {...line} />
