@@ -1,8 +1,6 @@
-# @seveibar/battery
+# @tscircuit/battery
 
 [![tscircuit version badge](https://registry-api.tscircuit.com/badges/view?package_name=seveibar.battery)](https://registry.tscircuit.com/seveibar/battery)
-
-
 
 > This project was generated using [tsci](https://github.com/tscircuit/tscircuit)
 
