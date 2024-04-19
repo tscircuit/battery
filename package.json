@@ -6,7 +6,7 @@
     "@tscircuit/react-fiber": "^1.0.19",
     "@types/bun": "latest",
     "@types/convert-units": "^2.3.9",
-    "tscircuit": "^0.0.68",
+    "tscircuit": "^0.0.69",
     "tsup": "^8.0.2"
   },
   "peerDependencies": {
@@ -17,5 +17,5 @@
     "build": "tsup ./index.ts --sourcemap --dts",
     "dev": "tsci dev"
   },
-  "version": "0.0.8"
+  "version": "0.0.10"
 }
