@@ -84,7 +84,7 @@ export const Battery = ({ name, footprint, voltage, ...props }: Props) => (
   <component
     name={name}
     footprint={footprint ?? <PinRow pad_count={2} pad_pitch="0.2in" />}
-    {...props}
+    {...(props as any)}
   >
     {BATTERY_SYMBOL_LINES.map((line, i) => (
       <schematicline {...line} />
