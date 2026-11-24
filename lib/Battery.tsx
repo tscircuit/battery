@@ -86,9 +86,13 @@ export const Battery = ({ name, footprint, voltage, ...props }: Props) => (
     footprint={footprint ?? <PinRow pad_count={2} pad_pitch="0.2in" />}
     {...(props as any)}
   >
-    {BATTERY_SYMBOL_LINES.map((line, i) => (
-      <schematicline {...line} />
-    ))}
+    {BATTERY_SYMBOL_LINES.map((line) => {
+      const lineProps = {
+        key: `${line.x1},${line.y1}-${line.x2},${line.y2}`,
+        ...line,
+      }
+      return <schematicline {...lineProps} />
+    })}
     <port x={0} y={-0.7} name="plus" pin_number={1} direction="up" />
     <port x={0} y={0.7} name="minus" pin_number={2} direction="down" />
   </component>
